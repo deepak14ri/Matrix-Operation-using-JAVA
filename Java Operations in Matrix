@@ -1,0 +1,67 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.function.*;
+import java.util.regex.*;
+import java.util.stream.*;
+import static java.util.stream.Collectors.joining;
+import static java.util.stream.Collectors.toList;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    
+	    Scanner in = new Scanner(System.in);
+	    
+	    int m =0; int n=0;
+	    
+	     m = in.nextInt();
+	     n = in.nextInt();
+	    
+	    int matrix[][] = new int[m][n];
+	    
+	    for(int i=0;i<m;i++){
+	        for(int j=0;j<n;j++){ 
+	            matrix[i][j] = in.nextInt();
+	            
+	        }
+	    }
+	     int m2 =0; int n2=0;
+	    
+	     m2 = in.nextInt();
+	     n2 = in.nextInt();
+	    
+	    int matrix2[][] = new int[m2][n2];
+	    
+	    for(int i=0;i<m2;i++){
+	        for(int j=0;j<n2;j++){ 
+	            matrix2[i][j] = in.nextInt();
+	            
+	        }
+	    }
+	    int mat_mul[][]= new int[m][n];
+	     for(int i=0; i<m; i++){
+	         for(int j=0; j<n; j++){
+	             // sum = a+b  System.out.print(matrix[i][j] + matrix2[i][j]+" ");
+	             // subs = a-b  System.out.print(matrix[i][j]- matrix2[i][j]+" ");
+	             for(int k=0;k<n;k++){
+	                 mat_mul[i][j] = mat_mul[i][j]+matrix[i][k]*matrix2[k][j];
+	             }
+	         }
+	     }
+	     for(int i=0;i<m;i++){
+	        for(int j=0;j<n;j++){ 
+	            System.out.print(mat_mul[i][j]+" ");
+	            
+	        }
+	        System.out.println();
+	    }
+	     
+	}
+}
+
+
+// in this we can sum, substract and multiply of square matries only.
